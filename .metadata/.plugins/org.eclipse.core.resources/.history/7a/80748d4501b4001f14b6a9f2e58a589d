@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+	</head>
+  <body>
+	
+    <div style="text-align: right;">
+	        <div>Bienvenido: <span sec:authentication="name"></span></div>
+	        <div>Permisos:<span sec:authentication="principal.authorities"> </span></div>
+        <form th:action="@{/logout}" method="post">
+	        <input type="submit" value="Logout" />
+	    </form>
+	</div>  
+	
+   <div class="starter-template">
+        <h1>Ejemplo Spring Boot Web Thymeleaf </h1>
+        <h2>
+            <span th:text="'Bienvenido'"></span>
+        </h2>
+    </div>
+<!--     <a th:href="personasBuscar">Buscar Personas</a> -->
+<!--     <a th:href="personasEditar">Registrar Persona</a> -->
+    <a th:href="ciudadesBuscar">Buscar Ciudades</a>
+    <a th:href="ciudadEditar">Registrar Ciudad</a>
+	<a th:href="caminosBuscar">Buscar Caminos</a>
+
+        
+  </body>
+</html>
