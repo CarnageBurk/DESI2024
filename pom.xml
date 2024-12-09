@@ -41,34 +41,59 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17f7e9b (agrego archivos)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17f7e9b (agrego archivos)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17f7e9b (agrego archivos)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17f7e9b (agrego archivos)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17f7e9b (agrego archivos)
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17f7e9b (agrego archivos)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+<<<<<<< HEAD
 		<!-- Dependencias principales de Spring Boot -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -81,6 +106,16 @@
         <artifactId>spring-boot-starter-test</artifactId>
         <scope>test</scope>
     </dependency>
+=======
+
+		<!-- Dependencia adicional para Hibernate (si se requiere explícitamente) -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.6.10.Final</version> <!-- Ajusta la versión según corresponda -->
+		</dependency>
+
+>>>>>>> 17f7e9b (agrego archivos)
 	</dependencies>
 
 	<build>
@@ -92,4 +127,8 @@
 		</plugins>
 	</build>
 
+<<<<<<< HEAD
 </project>
+=======
+</project>
+>>>>>>> 17f7e9b (agrego archivos)

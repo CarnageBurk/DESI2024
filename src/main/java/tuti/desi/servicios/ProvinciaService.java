@@ -1,5 +1,6 @@
 package tuti.desi.servicios;
 
+<<<<<<< HEAD
 
 import java.util.List;
 
@@ -26,4 +27,8 @@ public interface ProvinciaService {
 	 * @return Provincia encontrada
 	 */
 	Provincia getById(Long idProv) ;
+=======
+public class ProvinciaService {
+
+>>>>>>> 17f7e9b (agrego archivos)
 }
