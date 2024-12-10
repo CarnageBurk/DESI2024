@@ -1,121 +1,80 @@
 package tuti.desi.entidades;
 
-import java.math.BigDecimal;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "paquete")
+@Table(name = "paquetes")
 public class Paquete {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
-	
-	@Column(name = "nombre")
-    private String nombre;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Configura como autoincremental
+    private Long idPaquete;
 
-	@ManyToOne
-	private Ciudad origen;
+    private String origen;
+    private String destino;
+    private double peso;
+    private boolean fragil;
+    private String dniRemitente;
+    private String dniDestinatario;
 
-	@ManyToOne
-	private Ciudad destino;
+    // Getters y Setters
+    public Long getIdPaquete() {
+        return idPaquete;
+    }
 
-	private BigDecimal peso;
-	private boolean fragil;
-	private String dniRemitente;
-	private String dniDestinatario;
+    public void setIdPaquete(Long idPaquete) {
+        this.idPaquete = idPaquete;
+    }
 
-	public Paquete() {
-	}
+    public String getOrigen() {
+        return origen;
+    }
 
-	public Paquete(Ciudad origen, Ciudad destino, Long id, BigDecimal peso, boolean fragil, String dniRemitente,
-			String dniDestinatario, String nombre) {
-		this.origen = origen;
-		this.destino = destino;
-		Id = id;
-		this.peso = peso;
-		this.fragil = fragil;
-		this.dniRemitente = dniRemitente;
-		this.dniDestinatario = dniDestinatario;
-	}
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
 
-	public Ciudad getOrigen() {
-		return origen;
-	}
+    public String getDestino() {
+        return destino;
+    }
 
-	public void setOrigen(Ciudad origen) {
-		this.origen = origen;
-	}
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
 
-	public Ciudad getDestino() {
-		return destino;
-	}
+    public double getPeso() {
+        return peso;
+    }
 
-	public void setDestino(Ciudad destino) {
-		this.destino = destino;
-	}
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
 
-	public Long getId() {
-		return Id;
-	}
+    public boolean isFragil() {
+        return fragil;
+    }
 
-	public void setId(Long id) {
-		Id = id;
-	}
+    public void setFragil(boolean fragil) {
+        this.fragil = fragil;
+    }
 
-	public BigDecimal getPeso() {
-		return peso;
-	}
+    public String getDniRemitente() {
+        return dniRemitente;
+    }
 
-	public void setPeso(BigDecimal peso) {
-		this.peso = peso;
-	}
+    public void setDniRemitente(String dniRemitente) {
+        this.dniRemitente = dniRemitente;
+    }
 
-	public boolean isFragil() {
-		return fragil;
-	}
+    public String getDniDestinatario() {
+        return dniDestinatario;
+    }
 
-	public void setFragil(boolean fragil) {
-		this.fragil = fragil;
-	}
-
-	public String getDniRemitente() {
-		return dniRemitente;
-	}
-
-	public void setDniRemitente(String dniRemitente) {
-		this.dniRemitente = dniRemitente;
-	}
-
-	public String getDniDestinatario() {
-		return dniDestinatario;
-	}
-
-	public void setDniDestinatario(String dniDestinatario) {
-		this.dniDestinatario = dniDestinatario;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	@Override
-	public String toString() {
-		return "Paquete [Id=" + Id + ", nombre=" + nombre + ", origen=" + origen + ", destino=" + destino + ", peso="
-				+ peso + ", fragil=" + fragil + ", dniRemitente=" + dniRemitente + ", dniDestinatario="
-				+ dniDestinatario + "]";
-	}
-	
-
+    public void setDniDestinatario(String dniDestinatario) {
+        this.dniDestinatario = dniDestinatario;
+    }
 }
