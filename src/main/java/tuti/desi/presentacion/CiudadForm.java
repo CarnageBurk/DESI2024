@@ -14,9 +14,11 @@ public class CiudadForm {
 
 	private Long id;
 
+	@SuppressWarnings("deprecation")
 	@NotNull
 	@Size(min=2, max=30)
 	private String nombre;
+	@SuppressWarnings("deprecation")
 	@NotNull
 	private Long idProvincia;
 	
