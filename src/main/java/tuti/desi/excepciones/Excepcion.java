@@ -1,5 +1,6 @@
 package tuti.desi.excepciones;
 
+@SuppressWarnings("serial")
 public class Excepcion extends Exception{
 
 	
