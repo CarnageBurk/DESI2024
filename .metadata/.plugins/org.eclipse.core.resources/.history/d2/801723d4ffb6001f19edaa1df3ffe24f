@@ -1,0 +1,7 @@
+package tuti.desi.application.servicios;
+
+import tuti.desi.entidades.Camion;
+
+public interface CamionService {
+    void agregarCamion(Camion camion);
+}

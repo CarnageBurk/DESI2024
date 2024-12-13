@@ -1,0 +1,14 @@
+package tuti.desi.servicios;
+
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class CiudadService {
+
+    // Método que obtiene todas las ciudades (puede ser de un repositorio o una fuente de datos)
+    public List<String> obtenerTodasLasCiudades() {
+        // Esto es solo un ejemplo. Deberías devolver las ciudades desde tu base de datos.
+        return List.of("Ciudad 1", "Ciudad 2", "Ciudad 3");
+    }
+}
