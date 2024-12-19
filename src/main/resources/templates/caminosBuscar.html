@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<title>DESI - 2024 Buscar Caminos</title>
@@ -9,7 +10,9 @@
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/static/css/main.css">
+
 </head>
+
 <body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
@@ -57,32 +60,73 @@
 		</div>
 
 	</nav>
-	
-	
-    <h1>Búsqueda de Caminos</h1>
 
-    <form action="/caminosBuscar/resultados" method="get">
+
+	<h1>Búsqueda de Caminos</h1>
+
+	<form action="/caminosBuscar/resultados" method="get">
 		<div class="row g-3">
 			<div class="col-md-3">
-					<label for="exampleFormControlTextarea1" class="form-label">
-						Código Postal de la ciudad de origen:</label>
-				</div>
-				<div class="col-md-3">
-					<input class="form-control" type="number" id="codigoPostal" name="codigoPostal" required>
-				</div>
-				<br>
-				<div class="col-auto">
-				    <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-			</div>	
+				<label for="exampleFormControlTextarea1" class="form-label">
+					Código Postal de la ciudad de origen:</label>
+			</div>
+			<div class="col-md-3">
+				<!--<input class="form-control" type="number" id="codigoPostal" name="codigoPostal" required>-->
+				<select class="form-control" id="ciudadId" name="ciudadId" required>
+					<option value="">Seleccione una ciudad</option>
+					<option th:each="ciudad : ${ciudades}" 
+							th:value="${ciudad.id}" 
+							th:text="${ciudad.nombre}"
+							th:selected="${ciudad.id == ciudad.nombre}"
+							></option>
+							
+					</option>
+				</select>
+			</div>
+			<br>
+			<div class="col-auto">
+				<button type="submit" class="btn btn-primary mb-3">Buscar</button>
+			</div>
 		</div>
-		        
-    </form>
 
-    <div th:if="${mensajeError}">
-        <p th:text="${mensajeError}"></p>
-    </div>
+	</form>
 
-    <div th:if="${caminos != null and caminos.size() > 0}">
+	
+
+
+	<div th:if="${mensajeError != null}">
+		<p th:text="${mensajeError}"></p>
+	</div>
+
+	<div th:if="${caminos != null}">
+		<div th:if="${ciudadSeleccionada != null}">
+		    <h1>Caminos para la ciudad: <span th:text="${ciudadSeleccionada}"></span></h1>
+		</div>
+		<h2>Caminos encontrados:</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>ID Camino</th>
+					<th>-</th>
+					<th>Estado del Camino</th>
+					<th>-</th>
+					<th>Estado del Clima</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="camino : ${caminos}">
+				    <td th:text="${camino.idCamino}"></td>
+					<th>-</th>
+				    <td th:text="${camino.estadoCamino}"></td>
+					<th>-</th>
+				    <td th:text="${camino.estadoClima}"></td>
+										
+				</tr>
+			</tbody>
+	</div>
+
+	<!--<div th:if="${caminos != null and caminos.size() > 0}">
         <h2>Resultados de la Búsqueda:</h2>
         <table>
             <thead>
@@ -102,11 +146,11 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div>-->
 
-    <div th:if="${caminos != null and caminos.size() == 0}">
-        <p>No se encontraron caminos para el código postal proporcionado.</p>
-    </div>
+	<div th:if="${caminos != null and caminos.size() == 0}">
+		<p>No se encontraron caminos para el código postal proporcionado.</p>
+	</div>
 </body>
-</html>
 
+</html>

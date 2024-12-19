@@ -12,7 +12,10 @@ public class CaminoServiceImpl implements CaminoService {
     @Autowired
     private ICaminoRepo caminoRepo;
     @Override
-    public List<Camino> obtenerCaminosPorCodigoPostal(int codigoPostal) {
+    /*public List<Camino> obtenerCaminosPorCodigoPostal(int codigoPostal) {
         return caminoRepo.findByCodigoPostal(codigoPostal);
+    }*/
+    public List<Camino> obtenerCaminosPorCiudad(Long ciudadId) {
+        return caminoRepo.findByCiudadDestino_Id(ciudadId);
     }
 }

@@ -13,6 +13,9 @@ public class CamionServiceImpl implements CamionService {
 
     @Override
     public void agregarCamion(Camion camion) {
+        if (camionRepo.existsById(camion.getPatente())) {
+            throw new IllegalArgumentException("Ya existe un camión con esta patente.");
+        }
         camionRepo.save(camion);
     }
 }

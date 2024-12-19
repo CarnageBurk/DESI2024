@@ -45,7 +45,6 @@ public class CiudadServiceImpl implements CiudadService {
 			throw new Excepcion("Es necesario al menos un filtro");
 		else
 			return repo.findByNombreOrIdProvincia(filter.getNombre(),filter.getProvinciaSeleccionada());
-				
 	}
 
 
